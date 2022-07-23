@@ -24,15 +24,14 @@ from rest_framework.schemas import get_schema_view
 
 schema_view = get_schema_view(title='Blog API')
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',TemplateView.as_view(template_name="main/home.html"), name='home'),
+    path('', TemplateView.as_view(template_name="main/home.html"), name='home'),
     path('profile/', include('profiles.urls')),
     path('post/', include('posts.urls')),
-    path('accounts/login/', auth_views.LoginView.as_view(template_name='main/login.html'), name = 'login'),
+    path('accounts/login/', auth_views.LoginView.as_view(template_name='main/login.html'), name='login'),
     path('accounts/logout/', auth_views.LogoutView.as_view(template_name='main/login.html'), name='logout'),
-    
+
     path('apis/', include('apis.urls')),
     path('docs/', include_docs_urls(title='web API')),
     path('schema/', schema_view),
@@ -40,5 +39,5 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-        urlpatterns += static(settings.MEDIA_URL,
-                              document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -28,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #3rd party package
+    # 3rd party package
     'rest_framework',
 
-    #local
+    # local
     'profiles',
     'posts',
     'apis'
@@ -65,7 +63,7 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.AllowAny",
     ]
 }
-GEOIP_PATH =os.path.join(BASE_DIR, 'geoip')
+GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
 
 ROOT_URLCONF = 'smweb.urls'
 
@@ -87,7 +85,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'smweb.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -97,7 +94,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -117,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
     # },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -131,7 +126,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -142,21 +136,18 @@ USE_TZ = True
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-MEDIA_ROOT = os.path.join(BASE_DIR,'media') # '/home/omar09/smweb/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # '/home/omar09/smweb/media'
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')  # '/home/omar09/smweb/static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # '/home/omar09/smweb/static'
 STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
-
-LOGIN_REDIRECT_URL='home'
-LOGOUT_REDIRECT_URL='home'
-
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
